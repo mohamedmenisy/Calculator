@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #10131c;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: center;
+    
+}
+input{
+    border: none;
+    outline: none;
+}
+input:focus{
+    outline: none;
+    border: none;
+}
+button{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+button:focus{
+    outline: none;
+
+}
+.calculator{
+    background-color: #212532;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: .75rem;
+    width: 325px;
+    border: 1px solid #333;
+    border-radius: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: .75rem;
+    z-index: 999;
+}
+.screen{
+grid-column: 1/5;
+border-radius: .75rem;
+font-size: 2rem;
+height: 6rem;
+color: #fff;
+background-color: #333849;
+text-align: right;
+padding: .5rem;
+}
+::placeholder{
+    color: #fff;
+}
+.symbol,.number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1;
+    color: #fff;
+    transition: .15s ease;
+    border-radius: 50%;
+}
+
+.symbol{
+    background: #5d68e2;
+}
+.symbol:hover{
+    background: #4d55b1;
+}
+.number{
+background: #333849;
+}
+
+.number:hover{
+    background: #333849ac;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    margin: auto;
+    width: 90vw;
+  }
+  
+  .line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+  .line::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    -webkit-animation: drop 7s 0s infinite;
+            animation: drop 7s 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+            animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  }
+  .line:nth-child(1) {
+    margin-left: -25%;
+  }
+  .line:nth-child(1)::after {
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+  }
+  .line:nth-child(3) {
+    margin-left: 25%;
+  }
+  .line:nth-child(3)::after {
+    -webkit-animation-delay: 2.5s;
+            animation-delay: 2.5s;
+  }
+  
+  @-webkit-keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
+  }
+  
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
+  }
